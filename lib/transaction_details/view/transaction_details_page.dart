@@ -75,7 +75,7 @@ class TransactionDetailsPage extends StatelessWidget {
                       actions: <Widget>[
                         TextButton(
                           onPressed: () {
-                            Navigator.of(context).pop(); // Close the dialog
+                            Navigator.of(context).pop();
                             store.dispatch(RemoveTransactionAction(
                                 transaction: transaction));
                           },
@@ -83,7 +83,7 @@ class TransactionDetailsPage extends StatelessWidget {
                         ),
                         TextButton(
                           onPressed: () {
-                            Navigator.of(context).pop(); // Close the dialog
+                            Navigator.of(context).pop();
                           },
                           child: const Text('Abort'),
                         ),

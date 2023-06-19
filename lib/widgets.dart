@@ -41,9 +41,7 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StoreConnector<AppState, String>(
-      converter: (store) =>
-          store.state.userEmail ??
-          '', // Provide a default value if userId is null
+      converter: (store) => store.state.userEmail ?? '',
       builder: (context, userEmail) {
         return AppBar(
           title: Text('Hi $userEmail!'),

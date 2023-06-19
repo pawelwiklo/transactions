@@ -133,7 +133,7 @@ class _AddTransactionPageState extends State<AddTransactionPage> {
           return validatorText;
         }
         return null;
-      }, // Call the validator function
+      },
     );
   }
 

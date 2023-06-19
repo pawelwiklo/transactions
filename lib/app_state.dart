@@ -6,13 +6,13 @@ abstract class AppState {
   bool get showErrorMessage;
   Session? get session;
   String? get userEmail;
-  List<Transaction>? get data; // Add the data property
+  List<Transaction>? get data;
   AppState copyWith({
     String? errorMessage,
     bool? showErrorMessage,
     Session? session,
     String? userEmail,
-    List<Transaction>? data, // Include the data property in the copyWith method
+    List<Transaction>? data,
   });
 }
 
@@ -21,14 +21,14 @@ class AppUnauthenticated implements AppState {
   final bool showErrorMessage;
   final Session? session;
   final String? userEmail;
-  final List<Transaction>? data; // Add the data property
+  final List<Transaction>? data;
 
   AppUnauthenticated({
     this.errorMessage,
     this.showErrorMessage = false,
     this.session,
     this.userEmail,
-    this.data, // Include the data property in the constructor
+    this.data,
   });
 
   @override
@@ -37,14 +37,14 @@ class AppUnauthenticated implements AppState {
     bool? showErrorMessage,
     Session? session,
     String? userEmail,
-    List<Transaction>? data, // Include the data property in the copyWith method
+    List<Transaction>? data,
   }) {
     return AppUnauthenticated(
       errorMessage: errorMessage ?? this.errorMessage,
       showErrorMessage: showErrorMessage ?? this.showErrorMessage,
       session: session ?? this.session,
       userEmail: userEmail ?? this.userEmail,
-      data: data ?? this.data, // Update the copyWith method
+      data: data ?? this.data,
     );
   }
 }

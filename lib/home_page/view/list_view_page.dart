@@ -29,7 +29,23 @@ class ListViewPage extends StatelessWidget {
               },
             );
           } else {
-            return const Center(child: Text('No transactions available'));
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.list_alt,
+                    size: 140,
+                    color: Colors.white38,
+                  ),
+                  Text(
+                    'No data available. Try adding new transaction.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 20),
+                  )
+                ],
+              ),
+            );
           }
         },
       ),

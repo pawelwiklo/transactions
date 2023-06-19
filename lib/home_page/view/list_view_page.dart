@@ -21,12 +21,22 @@ class ListViewPage extends StatelessWidget {
         converter: (store) => store.state.data,
         builder: (context, data) {
           if (data != null && data.isNotEmpty) {
-            return ListView.builder(
-              itemCount: data.length,
-              itemBuilder: (context, index) {
-                final transaction = data[index];
-                return ListItem(transaction: transaction);
-              },
+            return Column(
+              children: [
+                Text(
+                  'Total Transactions: ${data.length}',
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
+                ),
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: data.length,
+                    itemBuilder: (context, index) {
+                      final transaction = data[index];
+                      return ListItem(transaction: transaction);
+                    },
+                  ),
+                ),
+              ],
             );
           } else {
             return Center(
